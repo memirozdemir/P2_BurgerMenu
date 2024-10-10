@@ -14,5 +14,7 @@ namespace P2_BurgerMenu.Entities
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string ImageURL { get; set; }
+        public int CategoryID { get; set; }
+        public virtual Category Category { get; set; }
     }
 }
