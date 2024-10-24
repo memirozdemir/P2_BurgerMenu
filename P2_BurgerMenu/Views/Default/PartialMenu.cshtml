@@ -1,0 +1,73 @@
+﻿﻿@model List<P2_BurgerMenu.Entities.Product>
+
+@{
+    int count = 0;
+}
+
+<section class="site-section" id="section-menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center mb-5 site-animate">
+                <h2 class="display-4">Lezzetli Menümüz</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+                        <p class="lead">Birbirinden eşsiz Türk ve Dünya Mutfağı lezzetleri alanında en başarılı aşçılarımızla sizleri bekliyor. Gastronomi başkenti Gaziantep'in eşsiz yemeklerini size sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 text-center">
+
+                @Html.Action("PartialCategory", "Default")
+                
+                <div class="tab-content text-left">
+
+
+                    <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
+                        <div class="row">
+
+                            @foreach (var x in Model )
+                            {
+                                count++;
+                                
+                                if (count % 2 == 1)
+                                {
+                                    <div class="col-md-6 site-animate">
+
+                                        <div class="media menu-item">
+                                            <img class="mr-3" src="@x.ImageURL" class="img-fluid" alt="Free Template by colorlib.com">
+                                            <div class="media-body">
+                                                <h5 class="mt-0">@x.ProductName</h5>
+                                                <p>@x.Description</p>
+                                                <h6 class="text-primary menu-price">@x.Price ₺</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                
+                                else
+                                {
+                                    <div class="col-md-6 site-animate">
+
+                                        <div class="media menu-item">
+                                            <img class="mr-3" src="@x.ImageURL" class="img-fluid" alt="Free Template by colorlib.com">
+                                            <div class="media-body">
+                                                <h5 class="mt-0">@x.ProductName</h5>
+                                                <p>@x.Description</p>
+                                                <h6 class="text-primary menu-price">@x.Price ₺</h6>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,27 @@
+﻿@model P2_BurgerMenu.Entities.Message
+@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Send message</h4>
+            <form method="post">
+                <label>Receiver Email</label>
+                @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control" })
+                <br />
+                <label>Title</label>
+                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                <br />
+                <label>Your message</label>
+                @Html.TextBoxFor(x => x.Content, new { @class = "form-control" })
+                <br />
+                <button class="btn btn-info">Send message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

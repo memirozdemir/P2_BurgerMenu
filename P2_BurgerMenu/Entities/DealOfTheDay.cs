@@ -13,5 +13,6 @@ namespace P2_BurgerMenu.Entities
         public decimal Price { get; set; }
         public string ImageURL { get; set; }
         public bool Status { get; set; }
+
     }
 }

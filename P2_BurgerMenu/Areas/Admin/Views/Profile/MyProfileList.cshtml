@@ -1,0 +1,57 @@
+﻿@model P2_BurgerMenu.Entities.Admin
+@{
+    ViewBag.Title = "MyProfileList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script>
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById("passwordField");
+        var toggleIcon = document.getElementById("toggleIcon");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleIcon.classList.remove("fa-eye");
+            toggleIcon.classList.add("fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            toggleIcon.classList.remove("fa-eye-slash");
+            toggleIcon.classList.add("fa-eye");
+        }
+    }
+</script>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">User Settings</h4>
+            <form method="post">
+                <label>Name</label>
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                <br />
+                <label>Surname</label>
+                @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                <br />
+                <label>Email</label>
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                <br />
+                <label>Username</label>
+                @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+                <br />
+                <label>Password</label>
+                <div class="input-group">
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "passwordField" })
+                    <div class="input-group-append">
+                        <span class="input-group-text" onclick="togglePasswordVisibility()">
+                            <i class="fa fa-eye" id="toggleIcon"></i>
+                        </span>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <button class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -16,5 +16,6 @@ namespace P2_BurgerMenu.Entities
         public string ImageURL { get; set; }
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
+        public bool? DealofTheDay { get; set; }
     }
 }
