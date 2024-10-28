@@ -15,5 +15,10 @@ namespace P2_BurgerMenu.Areas.Admin.Controllers
             var values = context.Categories.ToList();
             return View(values);
         }
+        public ActionResult CategoryProducts(int id)
+        {
+            var values = context.Products.Where(x=>x.CategoryID == id).ToList();
+            return View(values);
+        }
     }
 }

@@ -1,0 +1,159 @@
+﻿.card-preview {
+    width: 300px; 
+    height: 180px; 
+    perspective: 1000px; /* 3D görünüm için perspektif */
+    position: relative;
+    margin: auto; 
+}
+
+.card-number-preview, .card-holder-preview, .card-expiry-preview {
+    font-size: 1.2em; 
+    margin: 10px 0; /* Yazılar arasında boşluk */
+}
+
+/* Kart bilgilerini daha iyi konumlandırmak için */
+.card-number-preview {
+    position: absolute;
+    top: 80px; /* Kart üzerindeki konumu */
+    left: 20px; /* Kart üzerindeki konumu */
+    letter-spacing: 2px; /* Harfler arasındaki boşluk */
+}
+
+.card-holder-preview {
+    position: absolute;
+    bottom: 20px; /* Kart üzerindeki konumu */
+    left: 20px; /* Kart üzerindeki konumu */
+    font-size: 0.9em; /* Yazı boyutu */
+}
+
+.card-expiry-preview {
+    position: absolute;
+    bottom: 20px; /* Kart üzerindeki konumu */
+    right: 20px; /* Kart üzerindeki konumu */
+    font-size: 0.9em; /* Yazı boyutu */
+}
+
+.chip-image {
+    position: absolute;
+    top: 20px; /* Çipin konumu */
+    left: 20px; /* Çipin konumu */
+    width: 40px; /* Çipin boyutu */
+    height: auto; /* Oranları koruyarak boyutlandır */
+}
+
+.visa-logo {
+    position: absolute;
+    top: 10px; /* Visa logosunun konumu */
+    right: 20px; /* Visa logosunun konumu */
+    width: 60px; /* Visa logosunun boyutu */
+    height: auto;
+}
+
+.card-front, .card-back {
+    width: 100%; /* Kartın genişliği */
+    height: 100%; /* Kartın yüksekliği */
+    border-radius: 8px; /* Kenar yuvarlama */
+    position: absolute;
+    backface-visibility: hidden; /* Arka yüz görünürlüğü */
+    transition: transform 0.6s; /* Dönüşüm animasyonu */
+}
+
+.card-front {
+    background-image: url('/Content/Images/card-front.jpg'); /* Kartın ön yüz resmi */
+    background-size: cover; /* Arka plan boyutu */
+    background-position: center; /* Arka plan konumu */
+}
+
+.card-back {
+    background-image: url('/Content/Images/card-back.jpg'); /* Kartın arka yüz resmi */
+    background-size: cover; /* Arka plan boyutu */
+    background-position: center; /* Arka plan konumu */
+    transform: rotateY(180deg); /* Arka yüzü döndürme */
+}
+
+.card-preview.flip .card-front {
+    transform: rotateY(180deg); /* Ön yüzü döndürme */
+}
+
+.card-preview.flip .card-back {
+    transform: rotateY(0deg); /* Arka yüzü döndürme */
+}
+
+/* Arka yüz CVC numarası */
+.signature-area {
+    position: relative; /* İmza alanı konumu */
+    background-color: #fff; /* Arka plan rengi */
+    height: 40px; /* Yükseklik */
+    margin: 10px 20px; /* Margin */
+    border-radius: 4px; /* Kenar yuvarlama */
+    padding: 5px; /* İç boşluk */
+    display: flex; /* Flexbox kullanımı */
+    justify-content: space-between; /* Boşluk dağılımı */
+    align-items: center; /* Dikey ortalama */
+}
+
+.signature-text {
+    font-family: cursive; /* Yazı tipi */
+    color: #333; /* Yazı rengi */
+    font-size: 14px; /* Yazı boyutu */
+}
+
+.cvc-box {
+    background-color: #fff; /* Arka plan rengi */
+    padding: 2px 6px; /* İç boşluk */
+    border-radius: 4px; /* Kenar yuvarlama */
+    display: flex; /* Flexbox kullanımı */
+    align-items: center; /* Dikey ortalama */
+}
+
+.cvc-preview {
+    font-size: 14px; /* Yazı boyutu */
+    color: #333; /* Yazı rengi */
+}
+
+.cvc-label {
+    font-size: 14px; /* Yazı boyutu */
+    color: #333; /* Yazı rengi */
+    margin-right: 5px; /* Sağda boşluk */
+}
+
+.info-text {
+    font-size: 10px; /* Yazı boyutu */
+    color: #fff; /* Yazı rengi */
+    text-align: center; /* Yazı ortalama */
+    margin-top: 20px; /* Üstten boşluk */
+    padding: 0 10px; /* İç boşluk */
+}
+.formcard {
+    display: flex; /* Flexbox kullanımı */
+    flex-direction: column; /* Dikey dizim */
+    align-items: center; /* Yatayda ortalama */
+    justify-content: center; /* Dikeyde ortalama */
+    margin: 20px; /* Dış boşluk */
+}
+
+
+.labelcard {
+    width: 80%; /* Input genişliği */
+    max-width: 300px; /* Maksimum genişlik */
+    padding: 10px; /* İç boşluk */
+    border: 1px solid #ccc; /* Kenar rengi */
+    border-radius: 4px; /* Kenar yuvarlama */
+    box-sizing: border-box; /* Padding'i hesapla */
+    margin-bottom: 15px; /* Input elemanları arasında boşluk */
+}
+    input.card {
+    margin: 10px 0; /* Input elemanları arasında boşluk */
+    width: 80%; /* Input genişliği ayarlamak için */
+    max-width: 300px; /* Maksimum genişlik */
+    padding: 10px; /* İç boşluk */
+    border: 1px solid #ccc; /* Kenar rengi */
+    border-radius: 4px; /* Kenar yuvarlama */
+    box-sizing: border-box; /* İçerik ve padding'i hesaba kat */
+}
+.konteynir {
+    margin-bottom: 5px; /* Label ile input arasında boşluk */
+    font-size: 1em; /* Label yazı boyutu */
+}
+
+

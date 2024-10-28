@@ -1,0 +1,22 @@
+﻿@model List<P2_BurgerMenu.Entities.About>
+
+<div class="col-md-1"></div>
+@foreach (var x in Model)
+{
+    <div class="col-md-4 site-animate">
+
+        <p><img src="@x.PictureURL" alt="" class="img-fluid"></p>
+        <p class="text-black">
+            Address: <br> @x.Address <br> <br>
+            Phone: <br> @x.Phone <br> <br>
+            Email: <br> <a href="mailto: @x.Mail">@x.Mail</a>
+        </p>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-12 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="container">
+            <iframe src="@x.LocationURL" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+    </div>
+}

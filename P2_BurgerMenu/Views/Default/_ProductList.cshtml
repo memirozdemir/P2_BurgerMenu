@@ -1,0 +1,27 @@
+﻿@model List<P2_BurgerMenu.Entities.Product>
+
+<p>Ürünlerin listesi:</p>
+
+@if (Model == null || !Model.Any())
+{
+    <p>Bu kategoriye ait ürün bulunmamaktadır.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var x in Model)
+        {
+            <div class="col-6"> 
+                <div class="media menu-item" >
+                    <img class="mr-3 img-fluid" style="height:75px" src="@x.ImageURL"  alt="@x.ProductName">
+                    <div class="media-body">
+                        <h5 class="mt-0">@x.ProductName</h5>
+                        <p>@x.Description</p>
+                        <h6 class="text-primary menu-price">@x.Price ₺</h6>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+}

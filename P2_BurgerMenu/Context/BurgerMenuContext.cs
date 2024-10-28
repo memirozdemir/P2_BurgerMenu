@@ -16,5 +16,11 @@ namespace P2_BurgerMenu.Context
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Gallery> Galleries { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
+        public DbSet<Subscriber> Subscribers { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
     }
 }

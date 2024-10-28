@@ -19,3 +19,67 @@
 <script src="/eatwell-master/js/google-map.js"></script>
 
 <script src="/eatwell-master/js/main.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".category-link").on("click", function (e) {
+            e.preventDefault();
+
+            var categoryId = $(this).data("id");
+
+            $.ajax({
+    url: '@Url.Action("GetProductsByCategory", "Default")',
+    type: 'GET',
+    data: { categoryId: categoryId },
+    success: function (result) {
+        console.log("Gelen yanıt:", result); // Gelen sonucu konsola yazdır
+        $("#product-list").html(result); // Ürünleri listeleyen kısmı güncelliyor
+    },
+    error: function (xhr, status, error) {
+        console.log("Hata:", error);
+        alert("Ürünler yüklenirken bir hata oluştu.");
+    }
+});
+
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('#cardNumber').on('input', function () {
+            let cardNumber = $(this).val();
+            $('.card-number-preview').text(formatCardNumber(cardNumber));
+        });
+
+        $('#cardHolder').on('input', function () {
+            $('.card-holder-preview').text($(this).val());
+        });
+
+        $('#expiryDate').on('input', function () {
+            $('.card-expiry-preview').text($(this).val());
+        });
+    });
+
+    function formatCardNumber(number) {
+        return number.replace(/\d{4}(?=.)/g, '$& ');
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        // CVC kutusuna odaklanıldığında kartı döndür
+        $('#cvc').on('focus', function () {
+            $('.card-preview').addClass('flip');
+        });
+
+        // Odaktan çıkıldığında kartı tekrar ön yüze döndür
+        $('#cvc').on('blur', function () {
+            $('.card-preview').removeClass('flip');
+        });
+
+        // CVC kutusuna yazılanları kartın arka yüzündeki CVC önizlemesine yansıt
+        $('#cvc').on('input', function () {
+            const cvcValue = $(this).val();
+            $('.cvc-preview').text(cvcValue || "123"); // Eğer boşsa varsayılan olarak 123 göster
+        });
+    });
+
+</script>
