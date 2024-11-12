@@ -69,5 +69,19 @@ namespace P2_BurgerMenu.Areas.Admin.Controllers
             context.SaveChanges();
             return RedirectToAction("ProductList");
         }
-    }
+        public ActionResult dealOfTheDayTrue(int id)
+        {
+            var value = context.Products.Where(x=>x.ProductID == id).FirstOrDefault();
+            value.DealofTheDay = true;
+            context.SaveChanges();
+            return RedirectToAction("ProductList");
+        }
+		public ActionResult dealOfTheDayFalse(int id)
+		{
+			var value = context.Products.Where(x => x.ProductID == id).FirstOrDefault();
+			value.DealofTheDay = false;
+			context.SaveChanges();
+			return RedirectToAction("ProductList");
+		}
+	}
 }

@@ -1,0 +1,21 @@
+﻿@model P2_BurgerMenu.Entities.Gallery
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Resmi Düzenle</h4>
+            <form method="post">
+                @Html.HiddenFor(x=>x.GalleryID)  
+                <label>Resim Yolu</label>
+                @Html.TextBoxFor(x => x.PictureURL, new { @class = "form-control" })
+                <br />
+                <button class="btn btn-info">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+

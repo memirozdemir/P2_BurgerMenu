@@ -7,24 +7,24 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Adding new product</h4>
+            <h4 class="card-title">Yeni ürün ekle</h4>
             <form method="post">
-                <label>Product Name</label>
+                <label>Ürün İsmi</label>
                 @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
                 <br />
-                <label>Product Price</label>
+                <label>Ürün Fiyatı</label>
                 @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
                 <br />
-                <label>Product Picture URL</label>
+                <label>Resim Yolu</label>
                 @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
                 <br />
-                <label>Product Category</label>
+                <label>Ürün Kategorisi</label>
                 @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
                 <br />
-                <label>Product Description</label>
+                <label>Ürün Açıklaması</label>
                 @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
                 <br />
-                <button class="btn btn-info">Add Product</button>
+                <button class="btn btn-info">Ürün Ekle</button>
             </form>
         </div>
     </div>

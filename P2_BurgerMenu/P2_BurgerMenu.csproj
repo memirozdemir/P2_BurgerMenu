@@ -128,12 +128,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChartsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CreditCardsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashBoardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryController.cs" />
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReservationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StatisticsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SubscriberController.cs" />
     <Compile Include="Context\BurgerMenuContext.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
@@ -202,6 +209,14 @@
     <Compile Include="Migrations\202410280028352_mig12.cs" />
     <Compile Include="Migrations\202410280028352_mig12.Designer.cs">
       <DependentUpon>202410280028352_mig12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411041702352_mig13.cs" />
+    <Compile Include="Migrations\202411041702352_mig13.Designer.cs">
+      <DependentUpon>202411041702352_mig13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411042010347_mig14.cs" />
+    <Compile Include="Migrations\202411042010347_mig14.Designer.cs">
+      <DependentUpon>202411042010347_mig14.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1731,7 +1746,25 @@
     <Content Include="Areas\Admin\Views\Message\Sendbox.cshtml" />
     <Content Include="Areas\Admin\Views\Message\NewMessage.cshtml" />
     <Content Include="Areas\Admin\Views\Category\CategoryProducts.cshtml" />
+    <Content Include="Areas\Admin\Views\Subscriber\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CreditCards\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservation\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\About\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\About\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservation\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservation\EditReservation.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\AddCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Statistics\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DashBoard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Charts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminLayout\PartialReservationModal.cshtml" />
+    <Content Include="Areas\Admin\Views\Gallery\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Gallery\AddPicture.cshtml" />
+    <Content Include="Areas\Admin\Views\Gallery\Edit.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\chart.js" />
+    <Content Include="Scripts\chart.min.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
@@ -1774,7 +1807,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\CreditCards\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="regal\.git\objects\info\" />
@@ -1845,6 +1877,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410280028352_mig12.resx">
       <DependentUpon>202410280028352_mig12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411041702352_mig13.resx">
+      <DependentUpon>202411041702352_mig13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411042010347_mig14.resx">
+      <DependentUpon>202411042010347_mig14.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

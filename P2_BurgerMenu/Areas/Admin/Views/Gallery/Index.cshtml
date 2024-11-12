@@ -1,0 +1,27 @@
+﻿@model List<P2_BurgerMenu.Entities.Gallery>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="row site-custom-gutters">
+        <div class="col-md-12 text-center mb-5 site-animate">
+            <h2 class="display-4">Galeri Fotoğraflar Listesi</h2>
+        </div>
+        @foreach (var x in Model)
+        {
+            <div class="col-md-4 site-animate">
+                <a href="/Admin/Gallery/Edit/@x.GalleryID" class="site-thumbnail image-popup">
+                    <img src="@x.PictureURL" alt="Free Template by colorlib.com" class="img-fluid">
+                </a>
+                <br />
+                <br />
+                <a href="/Admin/Gallery/Delete/@x.GalleryID/" class="btn btn-danger">Sil</a>
+                <br />
+                <br />
+            </div>
+        }
+    </div>
+    <a href="/Admin/Gallery/AddPicture/" class="btn btn-info" >Yeni Resim Ekle</a>
+</div>

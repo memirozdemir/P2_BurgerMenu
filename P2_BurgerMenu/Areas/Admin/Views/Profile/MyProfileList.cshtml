@@ -24,21 +24,21 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">User Settings</h4>
+            <h4 class="card-title">Kullanıcı Ayarları</h4>
             <form method="post">
-                <label>Name</label>
+                <label>İsim</label>
                 @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
                 <br />
-                <label>Surname</label>
+                <label>Soyisim</label>
                 @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
                 <br />
                 <label>Email</label>
                 @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
                 <br />
-                <label>Username</label>
+                <label>Kullanıcı Adı</label>
                 @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
                 <br />
-                <label>Password</label>
+                <label>Şifre</label>
                 <div class="input-group">
                     @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "passwordField" })
                     <div class="input-group-append">

@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="mdi-responsive">
+    <div class="row">
+        <!-- Grafik 1 -->
+        <div class="col-md-6 mb-4">
+            <h4>Ürün-Fiyat Grafiği</h4>
+            <canvas id="chart1" width="500" height="300"></canvas>
+        </div>
+
+        <!-- Grafik 2 -->
+        <div class="col-md-6 mb-4">
+            <h4>Tarih-Rezervasyon Grafiği</h4>
+            <canvas id="chart2" width="500" height="300"></canvas>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Grafik 3 -->
+        <div class="col-md-6 mb-4">
+            <h4>Ürün-Satış Grafiği</h4>
+            <canvas id="chart3" width="100"></canvas>
+        </div>
+
+        <!-- Grafik 4 -->
+        <div class="col-md-6 mb-4">
+            <h4>Kategori-Ürün Grafiği</h4>
+            <canvas id="chart4" width="100"></canvas>
+        </div>
+    </div>
+</div>
+<script>
+    // Grafik 1 - Products Chart
+    const chart1Labels = @Html.Raw(Json.Encode(((List<P2_BurgerMenu.Entities.Product>)ViewBag.Chart1Data).Select(p => p.ProductName)));
+    const chart1Data = @Html.Raw(Json.Encode(((List<P2_BurgerMenu.Entities.Product>)ViewBag.Chart1Data).Select(p => p.Price)));
+
+    new Chart(document.getElementById('chart1'), {
+        type: 'bar',
+        data: {
+            labels: chart1Labels,
+            datasets: [{
+                label: 'Fiyat',
+                data: chart1Data,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        }
+    });
+
+    // Grafik 2 - Sales Chart
+    const chart2Labels = @Html.Raw(Json.Encode(((List<P2_BurgerMenu.Entities.Reservation>)ViewBag.Chart2Data).Select(s => s.ResDate.ToString("yyyy-MM-dd"))));
+    const chart2Data = @Html.Raw(Json.Encode(((List<P2_BurgerMenu.Entities.Reservation>)ViewBag.Chart2Data).Select(s => s.PplCount)));
+
+    new Chart(document.getElementById('chart2'), {
+        type: 'line',
+        data: {
+            labels: chart2Labels,
+            datasets: [{
+                label: 'Kişi Sayısı',
+                data: chart2Data,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        }
+    });
+
+    // Grafik 3 - Orders Chart
+    const chart3Labels = @Html.Raw(Json.Encode(((List<P2_BurgerMenu.Entities.Product>)ViewBag.Chart3Data).Select(o => o.ProductName)));
+    const chart3Data = @Html.Raw(Json.Encode(((List<P2_BurgerMenu.Entities.Product>)ViewBag.Chart3Data).Select(o => o.ProductSold)));
+
+    new Chart(document.getElementById('chart3'), {
+        type: 'pie',
+        data: {
+            labels: chart3Labels,
+            datasets: [{
+                label: 'Satış Sayısı',
+                data: chart3Data,
+                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                borderWidth: 1
+            }]
+        }
+    });
+
+    // Grafik 4 - Customers Chart
+    const chart4DataList = @Html.Raw(Json.Encode(ViewBag.Chart4Data));
+    const chart4Labels = chart4DataList.map(c => c.CategoryName);
+const chart4Data = chart4DataList.map(c => c.ProductCount);
+    new Chart(document.getElementById('chart4'), {
+        type: 'doughnut',
+        data: {
+            labels: chart4Labels,
+            datasets: [{
+                label: 'Ürün Sayısı',
+                data: chart4Data,
+                backgroundColor: ['rgba(255, 206, 86, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+                borderColor: ['rgba(255, 206, 86, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)'],
+                borderWidth: 1
+            }]
+        }
+    });
+</script>
+
+
+
+
+

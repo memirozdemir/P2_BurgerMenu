@@ -1,0 +1,20 @@
+﻿@model P2_BurgerMenu.Entities.Gallery
+@{
+    ViewBag.Title = "AddPicture";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Resim Ekle</h4>
+            <form method="post">
+                <label>Resim Yolu</label>
+                @Html.TextBoxFor(x => x.PictureURL, new { @class = "form-control" })
+                <br />
+                <button class="btn btn-info">Resmi Ekle</button>
+            </form>
+        </div>
+    </div>
+</div>
+

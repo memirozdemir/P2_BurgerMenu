@@ -8,19 +8,19 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Product List</h4>
+            <h4 class="card-title">Ürün Listesi</h4>
             <p class="card-description">
             </p>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Product ID</th>
-                            <th>Product Picture</th>
-                            <th>Product Name</th>
-                            <th>Product Category</th>
-                            <th>Delete</th>
-                            <th>Update</th>
+                            <th>Ürün ID</th>
+                            <th>Ürün Resmi</th>
+                            <th>Ürün İsmi</th>
+                            <th>Ürün Kategorisi</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,14 +31,14 @@
                                 <td><img src="@x.ImageURL" height="50" width="50" /></td>
                                 <td>@x.ProductName</td>
                                 <td>@x.Category.CategoryName</td>
-                                <td><a href="/Admin/Product/DeleteProduct/@x.ProductID" class="btn btn-danger">Delete</a></td>
-                                <td><a href="/Admin/Product/UpdateProduct/@x.ProductID" class="btn btn-success">Update</a></td>
+                                <td><a href="/Admin/Product/DeleteProduct/@x.ProductID" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/Admin/Product/UpdateProduct/@x.ProductID" class="btn btn-success">Düzenle</a></td>
                             </tr>
                         }
                     </tbody>
                 </table>
                 <br />
-                <a href="/Admin/Product/CreateProduct" class="btn btn-primary">Add New Product</a>
+                <a href="/Admin/Product/CreateProduct" class="btn btn-primary">Yeni Kategori Ekle</a>
             </div>
         </div>
     </div>

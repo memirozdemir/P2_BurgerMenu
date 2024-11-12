@@ -2,12 +2,14 @@
 using P2_BurgerMenu.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Drawing.Design;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace P2_BurgerMenu.Controllers
 {
@@ -39,7 +41,7 @@ namespace P2_BurgerMenu.Controllers
         
         public PartialViewResult PartialCategory()
         {
-            var values = context.Categories.ToList();
+            var values = context.Categories.Take(6).ToList();
             return PartialView(values);
         }
         public PartialViewResult PartialMenu()
@@ -81,9 +83,7 @@ namespace P2_BurgerMenu.Controllers
         [HttpPost]
         public PartialViewResult PartialReservation(Reservation reservation)
         {
-            reservation.ResStatus = "Waiting for confirmation";
-            reservation.PplCount = 0;
-            reservation.ResDate = DateTime.Now;
+            reservation.ResStatus = "Onay bekleniyor.";
             context.Reservations.Add(reservation);
             context.SaveChanges();
             return PartialView();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P2_BurgerMenu.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,11 @@ namespace P2_BurgerMenu.Areas.Admin.Controllers
 {
     public class CreditCardsController : Controller
     {
-        // GET: Admin/CreditCards
+        BurgerMenuContext context = new BurgerMenuContext();
         public ActionResult Index()
         {
-            return View();
+            var values = context.CreditCards.ToList();
+            return View(values);
         }
     }
 }

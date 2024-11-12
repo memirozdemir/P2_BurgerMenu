@@ -1,0 +1,106 @@
+﻿@model List<P2_BurgerMenu.Entities.Reservation>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="title">Rezervasyon Detayları</h2>
+            <div class="sacam-reservation-list">
+                @foreach (var x in Model)
+                {
+                    <div class="sacam-reservation-item">
+                        <div class="sacam-field">
+                            <label>İsim</label>
+                            <span>@x.Name</span>
+                        </div>
+                        <div class="sacam-field">
+                            <label>Soy İsim</label>
+                            <span>@x.Surname</span>
+                        </div>
+                        <div class="sacam-field">
+                            <label>Email</label>
+                            <span>@x.Email</span>
+                        </div>
+                        <div class="sacam-field">
+                            <label>Telefon</label>
+                            <span>@x.Phone</span>
+                        </div>
+                        <div class="sacam-field">
+                            <label>Kişi Sayısı</label>
+                            <span>@x.PplCount</span>
+                        </div>
+                        <div class="sacam-field">
+                            <label>Tarih</label>
+                            <span>@x.ResDate.ToString("MM/dd/yyyy")</span>
+                        </div>
+                        <div class="sacam-field">
+                            <label>Saat</label>
+                            <span>@x.Time</span>
+                        </div>
+                        <div class="sacam-field">
+                            <label>Durum</label>
+                            <span>@x.ResStatus</span>
+                        </div>
+                        <div class="sacam-field sacam-message">
+                            <label>Mesaj</label>
+                            <span>@x.Message</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .sacam-reservation-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .sacam-reservation-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        border: 2px solid #6a1b9a; 
+        padding: 25px;
+        border-radius: 10px;
+        background-color: #f3e5f5; 
+        font-size: 20px; /
+    }
+
+    .sacam-field {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .sacam-field label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #4a148c; 
+            font-size: 18px;
+        }
+
+        .sacam-field span {
+            padding: 10px;
+            background-color: #e1bee7;
+            border-radius: 5px;
+            display: block;
+            font-size: 18px;
+            color: #311b92;
+        }
+    .sacam-message {
+        grid-column: span 2;
+    }
+
+        .sacam-message span {
+            min-height: 150px; 
+            font-size: 20px; 
+            background-color: #d1c4e9; 
+            color: #4527a0; 
+        }
+</style>

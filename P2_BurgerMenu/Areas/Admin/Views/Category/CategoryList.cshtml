@@ -7,18 +7,18 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Category List</h4>
+            <h4 class="card-title">Kategori Listesi</h4>
             <p class="card-description">
             </p>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Category ID</th>
-                            <th>Category Name</th>
-                            <th>Category Products</th>
-                            <th>Delete</th>
-                            <th>Update</th>
+                            <th>Kategori ID</th>
+                            <th>Kategori Adı</th>
+                            <th>Kategorideki Ürünler</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,15 +27,15 @@
                             <tr>
                                 <td>@x.CategoryID</td>
                                 <td>@x.CategoryName</td>
-                                <td><a href="/Admin/Category/CategoryProducts/@x.CategoryID" class="btn btn-warning">Category Products</a></td>
-                                <td><a href="#" class="btn btn-danger">Delete</a></td>
-                                <td><a href="#" class="btn btn-success">Update</a></td>
+                                <td><a href="/Admin/Category/CategoryProducts/@x.CategoryID" class="btn btn-warning">Kategorideki Ürünler</a></td>
+                                <td><a href="/Admin/Category/DeleteCategory/@x.CategoryID" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/Admin/Category/UpdateCategory/@x.CategoryID" class="btn btn-success">Düzenle</a></td>
                             </tr>
                         }
                     </tbody>
                 </table>
                 <br />
-                <a href="#" class="btn btn-primary">Add New Category</a>
+                <a href="/Admin/Category/AddCategory/" class="btn btn-primary">Yeni Kategori Ekle</a>
             </div>
         </div>
     </div>

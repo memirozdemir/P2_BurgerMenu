@@ -12,7 +12,7 @@
     </div>
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/Admin/DashBoard/Index/">
                 <i class="icon-box menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -30,45 +30,52 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/Admin/Reservation/Index/">
                 <i class="icon-command menu-icon"></i>
                 <span class="menu-title">Rezervasyonlar</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="icon-help menu-icon"></i>
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="icon-mail menu-icon"></i>
                 <span class="menu-title">Mesajlar</span>
+                <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Message/Inbox/">Gelen Mesajlar</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/Admin/Message/Sendbox/">Giden Mesajlar</a></li>
+                </ul>
+            </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/Admin/About/Index/">
                 <i class="icon-help menu-icon"></i>
                 <span class="menu-title">Hakkımızda</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="icon-help menu-icon"></i>
-                <span class="menu-title">Referanslar</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/Admin/Statistics/Index/">
                 <i class="icon-help menu-icon"></i>
                 <span class="menu-title">İstatistikler</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/Admin/Charts/Index/">
                 <i class="icon-help menu-icon"></i>
                 <span class="menu-title">Grafikler</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
+        @*<li class="nav-item">
+            <a class="nav-link" href="/Admin/CreditCards/Index/">
                 <i class="icon-help menu-icon"></i>
                 <span class="menu-title">Kredi Kartı</span>
+            </a>
+        </li>*@
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Subscriber/Index/">
+                <i class="icon-help menu-icon"></i>
+                <span class="menu-title">Aboneler</span>
             </a>
         </li>
         <li class="nav-item">
@@ -78,7 +85,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/Default/Index/">
                 <i class="icon-help menu-icon"></i>
                 <span class="menu-title">Çıkış Yap</span>
             </a>

@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-y...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<h2 class="mb-4">İstatistikler</h2>
+<div class="row">
+    <!-- Kategori Sayısı -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-primary h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-list fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Kategori Sayısı</h5>
+                    <h3>@ViewBag.categoryCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ürün Sayısı -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-success h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-box fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Ürün Sayısı</h5>
+                    <h3>@ViewBag.productCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ana Yemek Sayısı -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-warning h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-utensils fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Ana Yemek Sayısı</h5>
+                    <h3>@ViewBag.mainCourseCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kredi Kart Sayısı -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-danger h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-credit-card fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Kredi Kart Sayısı</h5>
+                    <h3>@ViewBag.creditCardCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fırsat Sayısı -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-info h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-tags fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Fırsat Sayısı</h5>
+                    <h3>@ViewBag.dealOfTheDayCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gelen Mesajlar -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-secondary h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-inbox fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Gelen Mesajlar</h5>
+                    <h3>@ViewBag.receivedMessages</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Giden Mesajlar -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-primary h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-paper-plane fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Giden Mesajlar</h5>
+                    <h3>@ViewBag.sentMessages</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- İletişim Sayısı -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-success h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-phone-alt fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">İletişim Sayısı</h5>
+                    <h3>@ViewBag.contactsCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Abone Sayısı -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-primary h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-user-plus fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Abone Sayısı</h5>
+                    <h3>@ViewBag.subscriberCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Onaylanmış Rezervasyonlar -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-info h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-check-circle fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Onaylanmış Rezervasyonlar</h5>
+                    <h3>@ViewBag.confirmedReservationCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- İptal Edilmiş Rezervasyonlar -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-danger h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-times-circle fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">İptal Edilmiş Rezervasyonlar</h5>
+                    <h3>@ViewBag.declinedReservationCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Beklemedeki Rezervasyonlar -->
+    <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card text-white bg-warning h-100">
+            <div class="card-body d-flex align-items-center">
+                <i class="fas fa-hourglass-half fa-3x mr-3"></i>
+                <div>
+                    <h5 class="card-title">Beklemedeki Rezervasyonlar</h5>
+                    <h3>@ViewBag.pendingReservationCount</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -17,5 +17,6 @@ namespace P2_BurgerMenu.Entities
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
         public bool? DealofTheDay { get; set; }
+        public int ProductSold { get; set; }
     }
 }

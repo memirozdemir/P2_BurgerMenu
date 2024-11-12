@@ -1,0 +1,51 @@
+﻿@model P2_BurgerMenu.Entities.Reservation
+@{
+    ViewBag.Title = "EditReservation";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Rezervasyonu düzenle</h4>
+            <form method="post">
+                @Html.HiddenFor(x => x.ReservationID)
+                <label>İsim</label>
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                <br />
+                <label>Soyisim</label>
+                @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                <br />
+                <label>Email</label>
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                <br />
+                <label>Telefon</label>
+                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                <br />
+                <label>Kişi sayısı</label>
+                @Html.DropDownListFor(x => x.PplCount, new List<SelectListItem>
+{
+    new SelectListItem { Text = "1 Kişi", Value = "1" },
+    new SelectListItem { Text = "2 Kişi", Value = "2" },
+    new SelectListItem { Text = "3 Kişi", Value = "3" },
+    new SelectListItem { Text = "4 Kişi", Value = "4" }
+}, new { @class = "form-control" })
+                <br />
+                <label>Tarih</label>
+                @Html.TextBoxFor(x => x.ResDate, new { @class = "form-control"})
+                <br />
+                <label>Saat</label>
+                @Html.TextBoxFor(x => x.Time, new { @class = "form-control"})
+                <br />
+                <label>Durum</label>
+                @Html.TextBoxFor(x => x.ResStatus, new { @class = "form-control" })
+                <br />
+                <label>Mesaj</label>
+                @Html.TextAreaFor(x => x.Message, new { @class = "form-control" })
+                <br />
+                <button class="btn btn-info">Rezervasyonu Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+

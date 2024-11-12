@@ -12,7 +12,7 @@
                             <small>CLOSE </small><span aria-hidden="true">&times;</span>
                         </button>
                         <h1 class="mb-4">Abone ol</h1>
-                        <form method="post">
+                        <form id="subscribeForm">
 
                             <div class="row">
                                 <div class="col-md-12 form-group">
@@ -34,5 +34,25 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#subscribeForm').submit(function (event) {
+            event.preventDefault(); // Formun normal gönderimini engelle
 
+            $.ajax({
+                url: '@Url.Action("PartialSubscribe", "Default")', // Form verilerini gönderecek URL
+                type: 'POST',
+                data: $(this).serialize(), // Formdaki verileri al ve gönder
+                success: function (response) {
+                    alert("Başarıyla abone oldunuz!");
+                    $('#subscribeForm')[0].reset(); // Formu temizle
+                },
+                error: function () {
+                    alert("Abonelik oluşturulurken bir hata oluştu.");
+                }
+            });
+        });
+    });
+</script>
 @*Abone olma sonu*@

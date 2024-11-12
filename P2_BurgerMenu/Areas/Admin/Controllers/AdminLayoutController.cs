@@ -25,5 +25,9 @@ namespace P2_BurgerMenu.Areas.Admin.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult PartialReservationModal()
+        {
+            return PartialView();
+        }
     }
 }

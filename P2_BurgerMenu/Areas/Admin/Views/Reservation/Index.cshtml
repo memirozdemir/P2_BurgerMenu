@@ -1,0 +1,109 @@
+﻿    @model List<P2_BurgerMenu.Entities.Reservation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    string bgcolor ="";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Rezervasyon Listesi</h4>
+            <p class="card-description">
+            </p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>İsim</th>
+                            <th>Kişi Sayısı</th>
+                            <th>Alınan Tarih</th>
+                            <th>Durum</th>
+                            <th>Detaylar</th>
+                            <th>Onayla</th>
+                            <th>Güncelle</th>
+                            <th>İptal Et</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var x in Model)
+                        {
+                            if (x.ResStatus == "İptal edildi")
+                            {
+                                bgcolor = "bg-danger";
+                            }
+                            if (x.ResStatus == "Onaylandı")
+                            {
+                                bgcolor = "bg-success";
+                            }
+                            if (x.ResStatus == "Onay bekleniyor.")
+                            {
+                                bgcolor = "bg-warning";
+                            }
+                            <tr>
+                                <td>@x.ReservationID</td>
+                                <td>@x.Name @x.Surname</td>
+                                <td>@x.PplCount</td>
+                                <td>@x.ResDate</td>
+                                <td class="@bgcolor"><p class="text-dark">@x.ResStatus</p></td>
+                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#resModal_@x.ReservationID">Detaylar</button></td>
+                                <td><a href="/Admin/Reservation/StatusChangedToConfirm/@x.ReservationID" class="btn btn-success">Onayla</a></td>
+                                <td><a href="/Admin/Reservation/EditReservation/@x.ReservationID" class="btn btn-primary">Düzenle</a></td>
+                                <td><a href="/Admin/Reservation/StatusChangedToCancel/@x.ReservationID" class="btn btn-danger">İptal Et</a></td>
+                            </tr>
+                            <!--Detay modal-->
+                            <div class="modal fade" id="resModal_@x.ReservationID" tabindex="-1" role="dialog" aria-labelledby="resModal_@x.ReservationID" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="messageModalLabel_@x.ReservationID">Rezervasyon Detayı</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Vazgeç">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <strong>Ad Soyad:</strong> @x.Name @x.Surname
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>Email</strong> @x.Email
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>Telefon:</strong> @x.Phone
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>Kişi Sayısı</strong> @x.PplCount
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>Tarih:</strong> @x.ResDate.ToShortDateString()
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>Saat:</strong> @x.Time
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>Durum:</strong> @x.ResStatus
+                                            </div>
+                                            <div class="mb-3">
+                                                <strong>İçerik:</strong>
+                                                <div class="border rounded p-3" style="height: 300px; overflow-y: auto;">
+                                                    @x.Message
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Detay modal sonu-->
+                        }
+                    </tbody>
+                </table>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,7 +1,7 @@
 ﻿<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="../../index.html"><img src="/regal/images/logo.svg" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="/regal/images/logo-mini.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo" href="/Admin/DashBoard/Index/"><img src="/regal/images/logo.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="/Admin/DashBoard/Index/"><img src="/regal/images/logo-mini.svg" alt="logo" /></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -15,59 +15,28 @@
                             <i class="icon-search"></i>
                         </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Search" aria-label="search" aria-describedby="search">
+                    <input type="text" class="form-control" placeholder="Ara" aria-label="search" aria-describedby="search">
                 </div>
             </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown d-lg-flex d-none">
-                <button type="button" class="btn btn-info font-weight-bold">+ Create New Reservation</button>
+                <button type="button" href="#" target="_blank" data-toggle="modal" data-target="#reservationModal" class="btn btn-info font-weight-bold">+ Yeni Rezervasyon Oluştur</button>
             </li>
-            <li class="nav-item dropdown d-flex">
+            <li class="nav-item dropdown d-flex mr-4">
                 <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
                     <i class="icon-air-play mx-0"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                    <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <img src="../../images/faces/face4.jpg" alt="image" class="profile-pic">
-                        </div>
-                        <div class="preview-item-content flex-grow">
-                            <h6 class="preview-subject ellipsis font-weight-normal">
-                                David Grey
-                            </h6>
-                            <p class="font-weight-light small-text text-muted mb-0">
-                                The meeting is cancelled
-                            </p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <img src="../../images/faces/face2.jpg" alt="image" class="profile-pic">
-                        </div>
-                        <div class="preview-item-content flex-grow">
-                            <h6 class="preview-subject ellipsis font-weight-normal">
-                                Tim Cook
-                            </h6>
-                            <p class="font-weight-light small-text text-muted mb-0">
-                                New product launch
-                            </p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <img src="../../images/faces/face3.jpg" alt="image" class="profile-pic">
-                        </div>
-                        <div class="preview-item-content flex-grow">
-                            <h6 class="preview-subject ellipsis font-weight-normal">
-                                Johnson
-                            </h6>
-                            <p class="font-weight-light small-text text-muted mb-0">
-                                Upcoming board meeting
-                            </p>
-                        </div>
-                    </a>
+                    
+                        <p class="mb-0 font-weight-normal float-left dropdown-header">Mesajlar</p>
+                        <a href="/Admin/Message/Inbox/" class="dropdown-item preview-item">
+                            <i class="icon-mail menu-icon"></i>Gelen Kutusu
+                        </a>
+                        <a href="/Admin/Message/Sendbox/" class="dropdown-item preview-item">
+                            <i class="icon-upload"></i> Gönderilen Mesajlar
+                        </a>
+                    
                 </div>
             </li>
             <li class="nav-item dropdown d-flex mr-4 ">
@@ -75,12 +44,12 @@
                     <i class="icon-cog"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                    <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-                    <a class="dropdown-item preview-item">
-                        <i class="icon-head"></i> Profile
+                    <p class="mb-0 font-weight-normal float-left dropdown-header">Ayarlar</p>
+                    <a href="/Admin/Profile/MyProfileList/" class="dropdown-item preview-item">
+                        <i class="icon-head"></i>Profil
                     </a>
-                    <a class="dropdown-item preview-item">
-                        <i class="icon-inbox"></i> Logout
+                    <a href="/Default/Index/" class="dropdown-item preview-item">
+                        <i class="icon-inbox"></i> Çıkış Yap
                     </a>
                 </div>
             </li>
